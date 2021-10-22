@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos DOM</title>
+  <style>
+    body {
+      padding: 200px 400px;
+
+    }
+
+    div#area {
+      background-color: blue;
+      color: white;
+      width: 200px;
+      height: 200px;
+      line-height: 200px;
+      text-align: center;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="area">
+    <!-- na div voce coloca o EVENTO dps vc chama o evento dentro de JAVASCRIPT  na function exemplo abaixo-->
+    interaja...
+
+  </div>
+  <script>
+    var a = document.getElementById('area') // nao e melhor opção - por causa do escopo
+    a.addEventListener('click', clicar)
+    a.addEventListener('mouseenter', entrar)
+    a.addEventListener('mouseout', saiu)
+    function clicar() { // funcion vc colocar o nome do EVENTO e dentro do bloco {  } voce colocar o que deve fazer 
+      a.innerText = 'clicou!'
+      a.style.background = 'red'
+      a.style.color = 'black'
+      a.style.fontSize = '30px'
+    }
+
+    function entrar() {
+      a.innerText = 'Entrou!!'
+    }
+
+    function saiu() {
+      a.innerText = 'Saiu!!'
+      a.style.background = 'blue'
+      a.style.color = 'white'
+      a.style.fontSize = '20px'
+    }
+
+
+
+// FUNÇÃO -> e um bloco que ativa quando e chamado
+ // addEventListener -> serve para chamar a função dentro do javascript (para poder deixar o html limpo)
+    //              tipos de eventos com Mouse
+    // mouseeenter - evento que acontece qnd o mouse entra 
+    // mousemove - evento que acontece qnd o mouse fica dentro da div
+    // mousedown - evento acontece com clica e segura
+    // mouseup - evento acontece com solta o click
+    // click - evento acontece qnd clica
+    // mouseout  - evento aconte qnd o mouse sai da div
+
+    // JAVASCRIPT QND VOCE ESCREVE UM CODIGO ERRADO GERALMENTE ELE NAO MOSTRA, voce vai descobrir o erro usando expecionar dentro do navegador
+  </script>
+
+</body>
+
+</html>
